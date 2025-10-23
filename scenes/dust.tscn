@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://do5ns1hmu3sin"]
+
+[ext_resource type="Texture2D" uid="uid://cuugvynq75krx" path="res://sprites/particles/dust_particles_01.png" id="1_c43mm"]
+
+[sub_resource type="Animation" id="Animation_sse1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_n7s5k"]
+resource_name = "dust"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1kmfj"]
+_data = {
+&"RESET": SubResource("Animation_sse1k"),
+&"dust": SubResource("Animation_n7s5k")
+}
+
+[node name="dust" type="Sprite2D"]
+scale = Vector2(3, 3)
+texture = ExtResource("1_c43mm")
+hframes = 4
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1kmfj")
+}

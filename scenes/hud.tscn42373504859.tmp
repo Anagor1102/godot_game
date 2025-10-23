@@ -1,0 +1,584 @@
+[gd_scene load_steps=27 format=3 uid="uid://cj4050nbijqpo"]
+
+[ext_resource type="Texture2D" uid="uid://dvoqysu4juax4" path="res://UI/PNG/Grey/Default/button_rectangle_gradient.png" id="1_047uy"]
+[ext_resource type="Script" uid="uid://r4nt653xfmte" path="res://scripts/hud.gd" id="1_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://dej0rm3hg513o" path="res://UI/PNG/Green/Default/button_rectangle_flat.png" id="1_oo0fn"]
+[ext_resource type="AudioStream" uid="uid://divtlk10clcog" path="res://UI/Sounds/tap-a.ogg" id="2_0i1j5"]
+[ext_resource type="Texture2D" uid="uid://dnrsp8015n3pp" path="res://UI/PNG/Green/Default/button_rectangle_depth_flat.png" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://cglw38fv4fkbj" path="res://UI/PNG/Green/Default/button_rectangle_depth_gradient.png" id="3_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://bhkikxum87hhr" path="res://UI/PNG/Extra/Default/icon_repeat_outline.png" id="5_5pdws"]
+[ext_resource type="Texture2D" uid="uid://6lda7w6khd30" path="res://UI/PNG/Grey/Default/icon_outline_cross.png" id="6_hd3ao"]
+[ext_resource type="FontFile" uid="uid://4wo32jfam7e3" path="res://Comic Sans MS.ttf" id="7_5pdws"]
+[ext_resource type="Texture2D" uid="uid://dkepy38sf23na" path="res://UI/PNG/Green/Double/button_round_flat.png" id="9_5n1hp"]
+[ext_resource type="Texture2D" uid="uid://km2pwapbldgq" path="res://UI/PNG/Yellow/Default/button_round_flat.png" id="9_uxdf7"]
+[ext_resource type="Texture2D" uid="uid://7rcycl34ajnk" path="res://UI/PNG/Yellow/Default/button_round_depth_flat.png" id="10_5357l"]
+[ext_resource type="Texture2D" uid="uid://brlyrdiag6aaq" path="res://UI/PNG/Green/Double/button_round_depth_flat.png" id="10_eld54"]
+[ext_resource type="Texture2D" uid="uid://db0gni67gbrbk" path="res://UI/PNG/Green/Double/button_round_depth_gradient.png" id="11_3swnk"]
+[ext_resource type="Texture2D" uid="uid://bcxwhk44ufx01" path="res://UI/PNG/Yellow/Default/button_round_depth_gradient.png" id="11_iypfu"]
+[ext_resource type="Texture2D" uid="uid://q16avt5n2s3i" path="res://UI/PNG/Red/Default/icon_outline_cross.png" id="12_qkknv"]
+[ext_resource type="Texture2D" uid="uid://beb6jrpaywo60" path="res://settings.png" id="12_qpprf"]
+[ext_resource type="Texture2D" uid="uid://c1iu5qqvt7mvw" path="res://UI/PNG/Yellow/Default/arrow_basic_n.png" id="13_iypfu"]
+[ext_resource type="Texture2D" uid="uid://cxj3p58l0g7rx" path="res://UI/PNG/Yellow/Default/arrow_basic_n_small.png" id="14_qpprf"]
+[ext_resource type="Texture2D" uid="uid://ct673bu3gbhfc" path="res://UI/PNG/Yellow/Default/button_rectangle_flat.png" id="15_3xg78"]
+[ext_resource type="Texture2D" uid="uid://dwn4i6oddgerj" path="res://UI/PNG/Yellow/Default/button_rectangle_depth_flat.png" id="16_48y67"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pdws"]
+font = ExtResource("7_5pdws")
+font_size = 48
+font_color = Color(0.6156863, 0.4627451, 0.34509805, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0i1j5"]
+font = ExtResource("7_5pdws")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxdf7"]
+font = ExtResource("7_5pdws")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xg78"]
+font = ExtResource("7_5pdws")
+font_size = 32
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mphia"]
+font = ExtResource("7_5pdws")
+font_size = 32
+font_color = Color(0.6156863, 0.4627451, 0.34509805, 1)
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hd3ao")
+
+[node name="end_of_game_screen" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonRectangleGradient" type="Sprite2D" parent="end_of_game_screen"]
+position = Vector2(578.5, 324)
+scale = Vector2(3, 7)
+texture = ExtResource("1_047uy")
+
+[node name="RestartButton" type="TextureButton" parent="end_of_game_screen"]
+offset_left = 480.0
+offset_top = 321.0
+offset_right = 672.0
+offset_bottom = 385.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="end_of_game_screen/RestartButton"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 12.0
+offset_right = 118.0
+offset_bottom = 52.0
+texture = ExtResource("5_5pdws")
+
+[node name="QuitButton" type="TextureButton" parent="end_of_game_screen"]
+offset_left = 480.0
+offset_top = 401.0
+offset_right = 672.0
+offset_bottom = 465.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="end_of_game_screen/QuitButton"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 11.0
+offset_right = 117.0
+offset_bottom = 51.0
+texture = ExtResource("6_hd3ao")
+flip_h = true
+
+[node name="Message" type="Label" parent="end_of_game_screen"]
+offset_left = 291.0
+offset_top = 144.0
+offset_right = 866.0
+offset_bottom = 211.0
+text = "Your score is:"
+label_settings = SubResource("LabelSettings_5pdws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="end_of_game_screen"]
+offset_left = 291.0
+offset_top = 220.0
+offset_right = 866.0
+offset_bottom = 287.0
+text = "1000"
+label_settings = SubResource("LabelSettings_5pdws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main_menu_screen" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonRectangleGradient" type="Sprite2D" parent="main_menu_screen"]
+position = Vector2(578.5, 324)
+scale = Vector2(3, 7)
+texture = ExtResource("1_047uy")
+
+[node name="PlayButton" type="TextureButton" parent="main_menu_screen"]
+offset_left = 480.0
+offset_top = 241.0
+offset_right = 672.0
+offset_bottom = 305.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="main_menu_screen/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_0i1j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="main_menu_screen"]
+offset_left = 480.0
+offset_top = 321.0
+offset_right = 672.0
+offset_bottom = 385.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="main_menu_screen/SettingsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_0i1j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="main_menu_screen"]
+offset_left = 480.0
+offset_top = 401.0
+offset_right = 672.0
+offset_bottom = 465.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="Label3" type="Label" parent="main_menu_screen/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_0i1j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="main_menu_screen"]
+offset_left = 291.0
+offset_top = 144.0
+offset_right = 866.0
+offset_bottom = 211.0
+text = "SLIME ATTACK"
+label_settings = SubResource("LabelSettings_5pdws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="during_game_screen" type="Node2D" parent="."]
+
+[node name="Message2" type="Label" parent="during_game_screen"]
+offset_left = 28.0
+offset_top = 33.0
+offset_right = 175.0
+offset_bottom = 100.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_uxdf7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="during_game_screen"]
+offset_left = 179.0
+offset_top = 33.0
+offset_right = 462.0
+offset_bottom = 100.0
+text = "0"
+label_settings = SubResource("LabelSettings_uxdf7")
+vertical_alignment = 1
+
+[node name="SettingsDuringGameButton" type="TextureButton" parent="during_game_screen"]
+offset_left = 1053.0
+offset_top = 9.999999
+offset_right = 1181.0
+offset_bottom = 138.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("9_uxdf7")
+texture_pressed = ExtResource("10_5357l")
+texture_hover = ExtResource("11_iypfu")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="during_game_screen/SettingsDuringGameButton"]
+layout_mode = 0
+offset_left = 26.42871
+offset_top = 23.571426
+offset_right = 538.4287
+offset_bottom = 535.5714
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_qpprf")
+
+[node name="UpButton" type="TextureButton" parent="during_game_screen"]
+modulate = Color(1, 1, 1, 0.7019608)
+offset_left = 105.0
+offset_top = 385.00003
+offset_right = 137.0
+offset_bottom = 417.00003
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("13_iypfu")
+texture_pressed = ExtResource("14_qpprf")
+stretch_mode = 3
+
+[node name="RightButton" type="TextureButton" parent="during_game_screen"]
+modulate = Color(1, 1, 1, 0.7019608)
+offset_left = 266.0
+offset_top = 465.00003
+offset_right = 298.0
+offset_bottom = 497.00003
+rotation = 1.5707964
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("13_iypfu")
+texture_pressed = ExtResource("14_qpprf")
+stretch_mode = 3
+
+[node name="LeftButton" type="TextureButton" parent="during_game_screen"]
+modulate = Color(1, 1, 1, 0.7019608)
+offset_left = 105.0
+offset_top = 466.00003
+offset_right = 137.0
+offset_bottom = 498.00003
+rotation = 1.5707964
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("13_iypfu")
+texture_pressed = ExtResource("14_qpprf")
+stretch_mode = 3
+flip_v = true
+
+[node name="DownButton" type="TextureButton" parent="during_game_screen"]
+modulate = Color(1, 1, 1, 0.7019608)
+offset_left = 106.000015
+offset_top = 546.0
+offset_right = 138.00002
+offset_bottom = 578.0
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("13_iypfu")
+texture_pressed = ExtResource("14_qpprf")
+stretch_mode = 3
+flip_v = true
+
+[node name="AttackButton" type="TextureButton" parent="during_game_screen"]
+modulate = Color(1, 1, 1, 0.7019608)
+offset_left = 875.99994
+offset_top = 457.00003
+offset_right = 1068.0
+offset_bottom = 521.0
+scale = Vector2(1.2, 1.5)
+texture_normal = ExtResource("15_3xg78")
+texture_pressed = ExtResource("16_48y67")
+
+[node name="Label" type="Label" parent="during_game_screen/AttackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ATTACK"
+label_settings = SubResource("LabelSettings_3xg78")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="during_game_screen"]
+
+[node name="settings_screen" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonRectangleGradient" type="Sprite2D" parent="settings_screen"]
+position = Vector2(578.5, 324)
+scale = Vector2(3, 7)
+texture = ExtResource("1_047uy")
+
+[node name="BackButton" type="TextureButton" parent="settings_screen"]
+offset_left = 480.0
+offset_top = 401.0
+offset_right = 672.0
+offset_bottom = 465.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="Label3" type="Label" parent="settings_screen/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+label_settings = SubResource("LabelSettings_0i1j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="settings_screen"]
+offset_left = 291.0
+offset_top = 144.0
+offset_right = 866.0
+offset_bottom = 211.0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_5pdws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message2" type="Label" parent="settings_screen"]
+offset_left = 82.0
+offset_top = 228.0
+offset_right = 657.0
+offset_bottom = 295.0
+text = "Music"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_slider" type="HSlider" parent="settings_screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = 258.0
+offset_right = 708.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Message3" type="Label" parent="settings_screen"]
+offset_left = 82.0
+offset_top = 296.0
+offset_right = 657.0
+offset_bottom = 363.0
+text = "Sounds"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_percent" type="Label" parent="settings_screen"]
+offset_left = 497.0
+offset_top = 228.0
+offset_right = 1072.0
+offset_bottom = 295.0
+text = "100%"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound_percent" type="Label" parent="settings_screen"]
+offset_left = 497.0
+offset_top = 296.0
+offset_right = 1072.0
+offset_bottom = 363.0
+text = "100%"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound_slider" type="HSlider" parent="settings_screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = 326.0
+offset_right = 708.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="settings_during_game_screen" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonRectangleGradient" type="Sprite2D" parent="settings_during_game_screen"]
+position = Vector2(578.5, 324)
+scale = Vector2(3, 7)
+texture = ExtResource("1_047uy")
+
+[node name="QuitButton" type="TextureButton" parent="settings_during_game_screen"]
+offset_left = 480.0
+offset_top = 401.0
+offset_right = 672.0
+offset_bottom = 465.0
+texture_normal = ExtResource("1_oo0fn")
+texture_pressed = ExtResource("2_5ysmq")
+texture_hover = ExtResource("3_5ysmq")
+stretch_mode = 3
+
+[node name="Label3" type="Label" parent="settings_during_game_screen/QuitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+label_settings = SubResource("LabelSettings_0i1j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="settings_during_game_screen"]
+offset_left = 291.0
+offset_top = 144.0
+offset_right = 866.0
+offset_bottom = 211.0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_5pdws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message2" type="Label" parent="settings_during_game_screen"]
+offset_left = 82.0
+offset_top = 228.0
+offset_right = 657.0
+offset_bottom = 295.0
+text = "Music"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_slider" type="HSlider" parent="settings_during_game_screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = 258.0
+offset_right = 708.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Message3" type="Label" parent="settings_during_game_screen"]
+offset_left = 82.0
+offset_top = 296.0
+offset_right = 657.0
+offset_bottom = 363.0
+text = "Sounds"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_percent" type="Label" parent="settings_during_game_screen"]
+offset_left = 497.0
+offset_top = 228.0
+offset_right = 1072.0
+offset_bottom = 295.0
+text = "100%"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound_percent" type="Label" parent="settings_during_game_screen"]
+offset_left = 497.0
+offset_top = 296.0
+offset_right = 1072.0
+offset_bottom = 363.0
+text = "100%"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound_slider" type="HSlider" parent="settings_during_game_screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = 326.0
+offset_right = 708.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="CloseButton" type="TextureButton" parent="settings_during_game_screen"]
+offset_left = 816.0
+offset_top = 69.00001
+offset_right = 944.0
+offset_bottom = 197.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("9_5n1hp")
+texture_pressed = ExtResource("10_eld54")
+texture_hover = ExtResource("11_3swnk")
+
+[node name="TextureRect" type="TextureRect" parent="settings_during_game_screen/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.428589
+offset_top = 29.999996
+offset_right = 31.428589
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_qkknv")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(480, 321)
+stream = ExtResource("2_0i1j5")
+
+[connection signal="button_up" from="end_of_game_screen/RestartButton" to="." method="_on_restart_button_button_up"]
+[connection signal="button_up" from="end_of_game_screen/QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="main_menu_screen/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="main_menu_screen/SettingsButton" to="." method="_on_settings_button_button_up"]
+[connection signal="button_up" from="main_menu_screen/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="during_game_screen/SettingsDuringGameButton" to="." method="_on_settings_during_game_button_button_up"]
+[connection signal="button_up" from="during_game_screen/UpButton" to="." method="_on_up_button_button_up"]
+[connection signal="pressed" from="during_game_screen/UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="button_down" from="during_game_screen/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="button_up" from="during_game_screen/RightButton" to="." method="_on_right_button_button_up"]
+[connection signal="button_up" from="during_game_screen/LeftButton" to="." method="_on_left_button_button_up"]
+[connection signal="pressed" from="during_game_screen/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="button_up" from="during_game_screen/DownButton" to="." method="_on_down_button_button_up"]
+[connection signal="pressed" from="during_game_screen/DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="pressed" from="during_game_screen/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="button_up" from="settings_screen/BackButton" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="settings_during_game_screen/QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="settings_during_game_screen/CloseButton" to="." method="_on_close_button_button_up"]
